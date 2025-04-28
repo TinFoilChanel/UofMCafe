@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UofM Cafe</title>
+  <script defer src="http://localhost:3001/socket.io/socket.io.js"></script>
+  <script defer src="/js/script.js"></script>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    #chat-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 400px; /* or 30% if you want it more dynamic */
+      background-color: #ffffff;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #message-container {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    #message-container div {
+      background-color: #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 8px;
+      word-wrap: break-word;
+    }
+
+    #message-container div:nth-child(2n) {
+      background-color: #fff;
+    }
+
+    #send-container {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+    }
+
+    #message-input {
+      flex-grow: 1;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    #send-button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      font-size: 1em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #send-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-wrapper">
+    <div id="message-container"></div>
+    <form id="send-container">
+      <input type="text" id="message-input" autocomplete="off" placeholder="Type a message..." />
+      <button type="submit" id="send-button">Send</button>
+    </form>
+  </div>
+</body>
+</html>
